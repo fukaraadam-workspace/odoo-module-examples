@@ -5,3 +5,7 @@ This repository contains examples of Odoo modules to work on. Add this repositor
 ## Estate
 
 Followed tutorial: <https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/03_newapp.html>
+
+## Notes
+
+* csv files are added to database with the same name
