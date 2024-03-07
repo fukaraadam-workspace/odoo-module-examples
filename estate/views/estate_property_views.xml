@@ -41,18 +41,16 @@
 -->
 
     <!-- Top menu item -->
-    <!--
-    <menuitem name="Default Template" id="default_template.menu_root"/>
--->
+
+    <menuitem name="Estate" id="estate.menu_root"/>
+
     <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="default_template.menu_1" parent="default_template.menu_root"/>
-    <menuitem name="Menu 2" id="default_template.menu_2" parent="default_template.menu_root"/>
--->
+
+    <menuitem name="First Level" id="estate.menu_1" parent="estate.menu_root"/>
+
     <!-- actions -->
-    <!--
-    <menuitem name="List" id="default_template.menu_1_list" parent="default_template.menu_1" action="default_template.action_window"/>
-    <menuitem name="Server to list" id="default_template" parent="default_template.menu_2" action="default_template.action_server"/>
--->
+
+    <menuitem id="estate.menu_1_list" parent="estate.menu_1" action="estate.action_window"/>
+
   </data>
 </odoo>
