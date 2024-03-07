@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from calendar import c
 from odoo import models, fields
 from dateutil.relativedelta import relativedelta
 
@@ -24,12 +25,27 @@ class Property(models.Model):
     garage = fields.Boolean()
     garden = fields.Boolean()
     garden_area = fields.Integer()
-    garden_orientation = fields.Selection(
-        string="Garden Orientation",
-        selection=[
-            ("north", "North"),
-            ("south", "South"),
-            ("east", "East"),
-            ("west", "West"),
-        ],
+    garden_orientation = (
+        fields.Selection(
+            string="Garden Orientation",
+            selection=[
+                ("north", "North"),
+                ("south", "South"),
+                ("east", "East"),
+                ("west", "West"),
+            ],
+        ),
     )
+    state = fields.Selection(
+        [
+            ("new", "New"),
+            ("offer_received", "Offer Received"),
+            ("offer_accepted", "Offer Accepted"),
+            ("sold", "Sold"),
+            ("canceled", "Canceled"),
+        ],
+        required=True,
+        copy=False,
+        default="new",
+    )
+    active = fields.Boolean(default=True)
