@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
+from dateutil.relativedelta import relativedelta
+
+
+def get_default_date(*args):
+    return fields.Date.today() + relativedelta(months=3)
 
 
 class Property(models.Model):
@@ -10,10 +15,10 @@ class Property(models.Model):
     name = fields.Char(required=True)
     description = fields.Text()
     postcode = fields.Char()
-    date_availability = fields.Date()
+    date_availability = fields.Date(copy=False, default=get_default_date)
     expected_price = fields.Float(required=True)
-    selling_price = fields.Float()
-    bedrooms = fields.Integer()
+    selling_price = fields.Float(readonly=True, copy=False)
+    bedrooms = fields.Integer(default=2)
     living_area = fields.Integer()
     facades = fields.Integer()
     garage = fields.Boolean()
