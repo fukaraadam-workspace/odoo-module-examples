@@ -1,19 +1,23 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="default_template.list">
-      <field name="name">Default Template list</field>
-      <field name="model">default_template.default_template</field>
+
+    <record model="ir.ui.view" id="estate.list">
+      <field name="name">Estate list</field>
+      <field name="model">estate.property</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+        <tree string="Estate Tree">
+          <field name="name" string="Title"/>
+          <field name="postcode"/>
+          <field name="bedrooms"/>
+          <field name="living_area" string="Living Area (sqm)"/>
+          <field name="expected_price"/>
+          <field name="selling_price"/>
+          <field name="date_availability" string="Available From"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
 
